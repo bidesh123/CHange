@@ -1,0 +1,20 @@
+= form_for :text, @content, :url => {:controller => 'contents', :action => 'create'} do |f|
+  = hidden_field_tag :store_id,  params[:store_id] unless current_user.role?("admin")
+
+  .field
+    = f.label :body
+    = f.text_area :body, :class => :mceEditor
+  .field
+    = f.label :title
+    = f.text_field :title
+  %div.field
+    = label_tag "Estimated Price:"
+    %br
+    = text_field_tag :price
+  %div.field
+    - if current_user.role?("admin")
+      = f.label "Select Store:"
+      %br
+      = select_tag :store_id, options_for_select(Store.all.map {|s| [s.title,s.id]})
+  .actions
+    = f.submit 'Save'

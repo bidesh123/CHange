@@ -1,0 +1,36 @@
+= form_for :other_video, :url => {:action => :create}, :html => {:method => :post, :multipart => true} do |f|
+  %p
+  = label_tag "The Demo or Free Video"
+  %br
+  = file_field_tag :demo_video
+  %p
+  = label_tag "The main Video(MP4)"
+  %br
+  = file_field_tag :main_video_mp4
+  %p
+  = label_tag "The Main Video(MPEG)"
+  %br
+  = file_field_tag :main_video_mpeg
+  %p
+  = label_tag "The Main Video(WMV)"
+  %br
+  = file_field_tag :main_video_wmv
+  %p
+  = label_tag "The Video Image"
+  %br
+  = file_field_tag :video_image
+  %p
+  = label_tag "Title"
+  %br
+  = f.text_field :title
+  %p
+  = label_tag "Description"
+  %br
+  = f.text_area :description, :rows => 15, :col => 20, :class => :mceEditor
+  %br
+  %div{}
+    %div{:id =>"video-link"}= add_video_images_link
+    %br
+    %div{:id => "image-store"}
+  %div{:style => "float:left;width:auto;"}
+  = f.submit 'Save'

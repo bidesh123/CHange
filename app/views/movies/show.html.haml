@@ -1,0 +1,14 @@
+%p#notice= notice
+%object{:height => "185", :width => "280"}
+%param{:name => "movie", :value => @movie.source_file_name}
+%param{:name => "allowFullScreen", :value => "true"}
+%param{:name => "allowscriptaccess", :value => "always"}
+%embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "185", :autoplay => false, :src => "/movies/"+@movie.source_file_name,:type => "application/x-\nshockwave-flash", :width => "280"}
+
+- if current_user.role?("producer")
+  = link_to 'Edit', edit_movie_path(@movie, :store_id => Asset.first(:assetable_id => @movie.id, :assetable_type => "video").store.id) if Asset.first(:assetable_id => @movie.id, :assetable_type => "video").store.user_id == current_user.id
+- elsif current_user.role("admin")
+  = link_to 'Edit', edit_movie_path(@movie)
+
+\|
+= link_to 'Back', movies_path

@@ -1,0 +1,51 @@
+= form_for :video, @movie, :url => movies_path, :html => {:multipart => true} do |f|
+  -if @movie.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@movie.errors.count, "error")} prohibited this movie from being saved:"
+      %ul
+        - @movie.errors.full_messages.each do |msg|
+          %li= msg
+  = hidden_field_tag :store_id, params[:store_id]
+  %div.field
+    = f.label "Upload Video:"
+    %br
+    = file_field_tag :file
+  %div.field
+    = label_tag "Estimated Price:"
+    %br
+    = text_field_tag :price
+
+  %div.field
+    = label_tag "The Snap Shot Image:"
+    %br
+    = file_field_tag :image
+
+  %div.field
+    = label_tag "Video Title:"
+    %br
+    = text_field_tag :title
+
+  %div.field
+    = label_tag "Category:"
+    %br
+    = select_tag :category_id, options_for_select(Category.all.map {|c| [c.name,c.id]})
+
+
+  %div.field
+    = label_tag "Video Description:"
+    %br
+    = text_area_tag :description,nil,  :class => :mceEditor
+
+
+
+  - if current_user.role?("admin")
+    %div.field
+      = f.label "Select Store:"
+      %br
+      = select_tag :store_id, options_for_select(Store.all.map {|s| [s.title,s.id]})
+
+  .actions
+    = f.submit 'Save'
+
+%script{:type => "text/javascript", :charset => "utf-8"}
+  jQuery("#price").jStepper({minValue:0, maxValue:99999});

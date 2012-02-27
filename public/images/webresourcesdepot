@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebResourcesDepot - powered by FeedBurner</title>
+<link href="http://feedburner.google.com/fb/lib/stylesheets/undohtml.css" rel="stylesheet" type="text/css" media="all">
+<link href="http://feedburner.google.com/fb/feed-styles/bf30.css" rel="stylesheet" type="text/css" media="all">
+<link rel="alternate" type="application/rss+xml" title="WebResourcesDepot" href="http://feeds.feedburner.com/webresourcesdepot">
+<script type="text/javascript" src="http://feedburner.google.com/fb/feed-styles/bf30.js"></script>
+</head>
+<body id="browserfriendly" onload="jsFeedUrl='http://feeds.feedburner.com/webresourcesdepot';loadSubscribeAreaUltra('standard');go_decoding()">
+<div id="cometestme" style="display:none;">&amp;</div>
+<div id="bodycontainer">
+<div id="bannerblock">
+<h1>
+<a href="http://www.webresourcesdepot.com" title="Link to original website">WebResourcesDepot</a>
+</h1>
+<h2>syndicated content powered by FeedBurner</h2>
+<p style="clear:both"></p>
+</div>
+<div id="bodyblock">
+<div id="subscribenow" class="subscribeblock action">
+<div id="subscribe-userchoice" style="display:none">
+<p id="subscribeLink">
+<a href="#">...</a>
+</p>
+<p id="resetLink">Reset this favorite; <a href="#" onclick="return clearUserchoice('standard')">show all Subscribe options</a>
+</p>
+</div>
+<div id="subscribe-options">
+<h3>Subscribe Now!</h3>
+<h4>...with web-based news readers. Click your choice below:</h4>
+<div id="webbased">
+<a href="http://add.my.yahoo.com/rss?url=http://feeds.feedburner.com/webresourcesdepot" onclick="this.href = subscribeNow(this.href,'My Yahoo!');return true"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" width="91" height="17" alt="addtomyyahoo4"></a><a class="img" href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http://feeds.feedburner.com/webresourcesdepot" onclick="subscribeNow(this.href,'NewsGator Online');return true"><img src="http://www.newsgator.com/images/ngsub1.gif" alt="Subscribe in NewsGator Online"></a><a href="http://feeds.my.aol.com/add.jsp?url=http://feeds.feedburner.com/webresourcesdepot" onclick="this.href=subscribeNow(this.href,'My AOL');return true"><img src="http://o.aolcdn.com/myfeeds/html/vis/myaol_cta1.gif" alt="Add to My AOL" border="0"></a>
+<br>
+<a class="img" href="http://www.bloglines.com/sub/http://feeds.feedburner.com/webresourcesdepot" onclick="this.href=subscribeNow(this.href,'Bloglines');return true"><img src="http://www.bloglines.com/images/sub_modern5.gif" alt="Subscribe with Bloglines"></a><a href="http://www.netvibes.com/subscribe.php?url=http://feeds.feedburner.com/webresourcesdepot" onclick="this.href=subscribeNow(this.href,'Netvibes');return true"><img src="http://www.netvibes.com/img/add2netvibes.gif" alt="Add to netvibes"></a>
+<br>
+<a href="http://fusion.google.com/add?feedurl=http://feeds.feedburner.com/webresourcesdepot" onclick="this.href=subscribeNow(this.href,'Google');return true"><img src="http://buttons.googlesyndication.com/fusion/add.gif" width="104" height="17" alt="Add to Google"></a><a href="http://www.pageflakes.com/subscribe.aspx?url=http://feeds.feedburner.com/webresourcesdepot" onclick="this.href=subscribeNow(this.href,'Pageflakes');return true"><img src="http://www.pageflakes.com/subscribe2.gif" border="0"></a>
+</div>
+<h4>...with other readers:</h4>
+<form action="http://www.feedburner.com" method="get">
+<select onchange="location.href=subscribeNowUltra('feed:http://feeds.feedburner.com/webresourcesdepot',this.options[this.selectedIndex].value)"><option value="--" disabled selected style="padding-left:0">(Choose Your Reader)</option><option value="FeedDemon">FeedDemon</option><option value="NetNewsWire">NetNewsWire</option><option value="NewsFire">NewsFire</option><option value="NewsGator Outlook Edition">NewsGator Outlook Edition</option><option value="RSSOwl">RSSOwl</option><option value="shrook">Shrook</option><option value="USM">Universal Subscription Mechanism (USM)</option></select>
+</form>
+<p id="emailthis">
+<a onclick="window.open('http://feedburner.google.com/fb/a/mailverify?uri=webresourcesdepot', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" href="http://feedburner.google.com/fb/a/mailverify?uri=webresourcesdepot">Get WebResourcesDepot delivered by email</a>
+</p>
+<p>
+<a href="http://feeds.feedburner.com/webresourcesdepot?format=xml"><img src="http://feedburner.google.com/fb/lib/images/icons/feed-icon-12x12-orange.gif" alt="original feed"></a> <a href="http://feeds.feedburner.com/webresourcesdepot?format=xml">View Feed XML</a>
+</p>
+</div>
+<input id="savechoice" type="hidden" value="standard">
+</div>
+<p class="about">FeedBurner makes it easy to receive content updates in My Yahoo!, Newsgator, Bloglines, and other news readers.</p>
+<p class="about">
+<a href="http://www.google.com/support/feedburner/bin/answer.py?answer=79408">Learn more about syndication and FeedBurner...</a>
+</p>
+<h3 id="currentFeedContent">Current Feed Content</h3>
+<ul>
+<li class="regularitem" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/randomly-rotating-image-gallery-mosaiqy/">Randomly Rotating Image Gallery &ndash; Mosaiqy</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Wed, 13 Jul 2011 05:01:12 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2355&c=12802' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2355&c=12802' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p>Similar to the <a href="http://www.webresourcesdepot.com/draggable-endless-content-galleries-with-mootools-the-wall/">The Wall plugin for MooTools</a> that was shared few days ago, <a href="http://www.fabriziocalderan.it/mosaiqy/" target="_blank"><strong>Mosaiqy</strong></a> is a jQuery plugin for presenting images in a <strong>Mosaic-like grid interface</strong>.</p>
+<p>The images are displayed inside <strong>randomly moving columns and rows</strong> where CSS3 transitions are used for the animations.</p>
+<p><a href="http://www.fabriziocalderan.it/mosaiqy/" target="_blank"><img alt="Mosaiqy jQuery Image Gallery" height="161" src="http://www.webresourcesdepot.com/wp-content/uploads/mosaiqy-jquery-plugin.jpg" width="480" /></a></p>
+<p>Once a thumbnail is clicked, the <strong>original version is loaded inside the grid</strong> with a nice slideIn/Out effect.</p>
+<p>It retrieves images from a <strong>JSON/JSONP data source</strong> which makes integrating with image hosting services pretty easy and there are already demos for Flickr, Instagram and Panoramio.</p>
+<p><strong>Mosaiqy</strong> has <strong>multiple configuration options</strong> like the speed of transitions, delay between each, number of columns/rows, looping on/off and more.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=RzxxAVai5Sw:XFqPFFCiPeE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=RzxxAVai5Sw:XFqPFFCiPeE:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=RzxxAVai5Sw:XFqPFFCiPeE:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=RzxxAVai5Sw:XFqPFFCiPeE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=RzxxAVai5Sw:XFqPFFCiPeE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=RzxxAVai5Sw:XFqPFFCiPeE:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=RzxxAVai5Sw:XFqPFFCiPeE:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/RzxxAVai5Sw" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/selling-on-facebook-easily-and-quickly-with-avactis-shopping-cart/">Selling On Facebook Easily And Quickly With Avactis Shopping Cart</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Tue, 12 Jul 2011 07:58:25 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2353&c=19792' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2353&c=19792' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p><strong>Info:</strong> This is a review of a paid application.</p>
+<p><a href="http://www.avactis.com/" target="_blank"><strong>Avactis</strong></a>, the powerful <strong>e-commerce application for any-sized business</strong> (which was previously shared at WRD), has recently released an exciting feature for <strong>integrating the stores into Facebook</strong>.</p>
+<p>Considering the size of Facebook, the amount of time user&#39;s spend in the website and how fast a word can spread with it, it is definitely a huge market.</p>
+<p><a href="http://www.avactis.com/" target="_blank"><img alt="Avactis Facebook" height="376" src="http://www.webresourcesdepot.com/wp-content/uploads/avactis-facebook.gif" width="480" /></a></p>
+<p>By simply creating a Facebook page, adding the <strong>Facebook Avactis application</strong> and installing the <strong><a href="http://marketplace.avactis.com/product-info.php?Storefront_for_Facebook-pid202.html" target="_blank">Avactis Storefront extension</a></strong>, the page gets a store tab which <strong>displays your complete store inside Facebook</strong> with a theme that integrates to it completely.</p>
+<p><strong>After setting up the store, visitors can:</strong></p>
+<ul>
+<li>browse categories</li>
+<li>view product details</li>
+<li>enter promo codes</li>
+<li>enter gift certificates</li>
+<li>add products to shopping cart</li>
+</ul>
+<p>right inside Facebook and will be forwarded to the original store during the checkout process.</p>
+<p>The best part is, it is <strong>only a one-time-setup</strong>, the rest is handled automatically and you just need to maintain the main web store.</p>
+<p><a href="http://www.avactis.com/" target="_blank"><img alt="Avactis E-Commerce" height="185" src="http://www.webresourcesdepot.com/wp-content/uploads/avactis-admin.gif" width="480" /></a></p>
+<h3>New Editions of Avactis</h3>
+<p><strong>Avactis</strong> has also launched new <strong>2 new editions</strong> of their e-commerce platform; <strong>Lite</strong> and <strong>Premium</strong>.</p>
+<p><strong>Lite Edition:<br />
+	</strong></p>
+<p>It is a package for web designers/developers and hosting providers who provide e-commerce related services to their clients.</p>
+<p>The package has all the core features of the software but doesn&#39;t include support credits and comes with a much cheaper price.</p>
+<p><strong>Premium Edition:<br />
+	</strong></p>
+<p>This is the complete package which has all the features including installation and Facebook integration. Also, it includes 1 month of Level-1 support and extra support credits.</p>
+<p><strong>P.S.</strong> Both editions are hosted on user&#39;s server for unlimited time without any restrictions.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=Binhj2SCBto:JlqMG94f8Vc:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=Binhj2SCBto:JlqMG94f8Vc:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=Binhj2SCBto:JlqMG94f8Vc:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=Binhj2SCBto:JlqMG94f8Vc:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=Binhj2SCBto:JlqMG94f8Vc:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=Binhj2SCBto:JlqMG94f8Vc:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=Binhj2SCBto:JlqMG94f8Vc:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/Binhj2SCBto" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/open-source-google-reader-alternative-tiny-tiny-rss/">Open Source Google Reader Alternative &ndash; Tiny Tiny RSS</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Tue, 12 Jul 2011 05:01:08 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2351&c=27726' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2351&c=27726' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p><a href="http://tt-rss.org" target="_blank"><strong>Tiny Tiny RSS</strong></a> is an <strong>open source and web-based feed reader</strong> application that offers a desktop-like user experience.</p>
+<p>It is built with <strong>PHP</strong>, uses <strong>MySQL or PostgreSQL</strong> for storing data and makes use of the Magpie and SimplePie libraries (check <a href="http://www.webresourcesdepot.com/php-rss-parsers/">PHP RSS Parsers</a>) for fetching the feeds.</p>
+<p>The interface is completely <strong>Ajaxed</strong>, there is <strong>support for RSS, RDF + Atom</strong> and protected/authenticated feeds can be read as well.</p>
+<p><a href="http://tt-rss.org" target="_blank"><img alt="Tiny Tiny RSS" height="206" src="http://www.webresourcesdepot.com/wp-content/uploads/tiny-tiny-rss.gif" width="480" /></a></p>
+<p><strong>Tiny Tiny RSS</strong> not only fetches data but can re-publish them as well (again as a RSS feed). The data is also reachable via a <strong>JSON-based API</strong>.</p>
+<p>The application <strong>supports multiple users</strong>, it is multilingual and <strong>has a mobile-version</strong> as well.</p>
+<p>And, there are many other features like <strong>OPML import/export</strong>, keyboard shortcuts, duplicate content filtering or article scoring.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=DpCNTg6fXc0:cCGdPXBPfYY:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=DpCNTg6fXc0:cCGdPXBPfYY:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=DpCNTg6fXc0:cCGdPXBPfYY:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=DpCNTg6fXc0:cCGdPXBPfYY:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=DpCNTg6fXc0:cCGdPXBPfYY:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=DpCNTg6fXc0:cCGdPXBPfYY:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=DpCNTg6fXc0:cCGdPXBPfYY:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/DpCNTg6fXc0" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/60-social-icons-in-all-popular-formats-by-picons-me/">60 Social Icons In All Popular Formats By Picons.me</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Mon, 11 Jul 2011 17:01:36 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2350&c=28284' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2350&c=28284' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p>Picons.me, an icon design company offering various icon sets, is sharing <a href="http://picons.me/download-social.php" target="_blank"><strong>a set of 60 social icons</strong></a> for <strong>free</strong>.</p>
+<p>The set has <strong>items for all the popular social networks</strong> and comes in multiple vector formats: <strong>.AI, .EPS, .PDF</strong>.</p>
+<p>There are also <strong>.PSD + .CSH</strong> versions and <strong>.PNG in 8 different sizes</strong> (from 16*16px to 512*512px).</p>
+<p><strong>P.S.</strong> In order to prevent any confusions, the resource&#39;s website mentions that the Picons.me license doesn&#39;t apply to this social set.</p>
+<p><a href="http://picons.me/download-social.php" target="_blank"><img alt="Picons Social Icons" height="237" src="http://www.webresourcesdepot.com/wp-content/uploads/picons-social.jpg" width="480" /></a></p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=mJUAowpRgI4:gRa6I6qqgpQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=mJUAowpRgI4:gRa6I6qqgpQ:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=mJUAowpRgI4:gRa6I6qqgpQ:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=mJUAowpRgI4:gRa6I6qqgpQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=mJUAowpRgI4:gRa6I6qqgpQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=mJUAowpRgI4:gRa6I6qqgpQ:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=mJUAowpRgI4:gRa6I6qqgpQ:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/mJUAowpRgI4" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/draggable-endless-content-galleries-with-mootools-the-wall/">Draggable &amp; Endless Content Galleries With MooTools &ndash; The Wall</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Mon, 11 Jul 2011 05:47:28 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2349&c=32602' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2349&c=32602' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p><a href="http://wall.plasm.it/" target="_blank"><strong>The Wall</strong></a> is a <strong>MooTools plugin for creating an endless grid of contents or coda sliders</strong> which can be browsed vertically and/or horizontally.</p>
+<p>It is very flexible and <strong>can be positioned inside/over any element</strong> whether it is a <code>&lt;div&gt;</code> or an <code>&lt;image&gt;</code> (like the logo of the resource).</p>
+<p><a href="http://wall.plasm.it/" target="_blank"><img alt="MooTools - The Wall" height="271" src="http://www.webresourcesdepot.com/wp-content/uploads/mootools-wall-gallery.jpg" width="480" /></a></p>
+<p>The gallery (wall) generated <strong>can be browsed with dragging the interface</strong> to the direction desired. Transitions and their speed can be customized and a callback after any user interactions help customizing it more.</p>
+<p>Besides dragging, it can be moved to a selected coordinate which is nice for adding prev-next functionality.</p>
+<p>There are also various other features like <strong>reverse dragging</strong> and <strong>automatic slideshows</strong>.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=qxjBMk3UTa8:71fGFgenkHA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=qxjBMk3UTa8:71fGFgenkHA:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=qxjBMk3UTa8:71fGFgenkHA:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=qxjBMk3UTa8:71fGFgenkHA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=qxjBMk3UTa8:71fGFgenkHA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=qxjBMk3UTa8:71fGFgenkHA:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=qxjBMk3UTa8:71fGFgenkHA:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/qxjBMk3UTa8" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/boxjs-boxcss-easy-way-to-minimize-and-cache-javascript-css-files/">BoxJS &amp; BoxCss &ndash; Easy Way To Minimize And Cache JavaScript-CSS Files</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Sun, 10 Jul 2011 16:41:06 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2348&c=30312' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2348&c=30312' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p><a href="http://boxjs.com/" target="_blank"><strong>BoxJS</strong></a> and <a href="http://boxcss.com/" target="_blank"><strong>BoxCSS</strong></a> are two different-yet-similar services built by the same developer team which offer a <strong>simplified method in compressing JavaScript and CSS files</strong>, serving the minimized versions and caching them.</p>
+<p>They are <strong>free-to-use web apps</strong> which <strong>BoxJS</strong> requires including a lightweight JavaScript file (1.4kb) in web pages, specifying the JS files with a simple function and the service returns the minified + combined (into a single file) JavaScript file.</p>
+<p><a href="http://boxjs.com/" target="_blank"><img alt="BoxCss - BoxJS" height="163" src="http://www.webresourcesdepot.com/wp-content/uploads/boxcss-boxjs.gif" width="480" /></a></p>
+<p><strong>BoxCSS</strong> works by using the service&#39;s URL as the source of the CSS file but passing the original file&#39;s location as a querystring parameter.</p>
+<p>Besides JavaScript and CSS, <strong>CoffeeScript and LESS is supported</strong> as well.</p>
+<p>The drawback can be the need of relying to the CDN used by the services. In this case, you can use the service as a minifier and use the processes source file.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=EMAGrHL4-4M:G2XvGxwn53g:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=EMAGrHL4-4M:G2XvGxwn53g:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=EMAGrHL4-4M:G2XvGxwn53g:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=EMAGrHL4-4M:G2XvGxwn53g:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=EMAGrHL4-4M:G2XvGxwn53g:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=EMAGrHL4-4M:G2XvGxwn53g:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=EMAGrHL4-4M:G2XvGxwn53g:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/EMAGrHL4-4M" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/motioncaptcha-drawing-based-captcha-with-jquery/">MotionCAPTCHA &ndash; Drawing-Based Captcha With jQuery</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Sat, 09 Jul 2011 16:51:36 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2347&c=14118' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2347&c=14118' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p>Captchas are usually hard to use and boring. However they help a lot in minimizing headaches on the application-side by making sure that &quot;an action is performed by a human&quot;.</p>
+<p><a href="http://www.josscrowcroft.com/projects/motioncaptcha-jquery-plugin/" target="_blank"><strong>MotionCAPTCHA</strong></a>, a <strong>jQuery plugin</strong>, offers a different type of captcha by <strong>asking the users to draw the shape displayed</strong>. It is not only different but also fun and can even be easier to-use for touch devices.</p>
+<p><strong>The project is currently a proof-of-concept</strong> considering the captcha is only verified on the client-side and can be manipulated. However, the next version is planned to have server-side and better browser support. Looking forward to it!</p>
+<p><a href="http://www.josscrowcroft.com/projects/motioncaptcha-jquery-plugin/" target="_blank"><img alt="MotionCAPTCHA" height="297" src="http://www.webresourcesdepot.com/wp-content/uploads/motioncaptcha.jpg" width="480" /></a></p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=TgJjwK2ynKs:TqGFv1qjK7o:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=TgJjwK2ynKs:TqGFv1qjK7o:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=TgJjwK2ynKs:TqGFv1qjK7o:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=TgJjwK2ynKs:TqGFv1qjK7o:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=TgJjwK2ynKs:TqGFv1qjK7o:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=TgJjwK2ynKs:TqGFv1qjK7o:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=TgJjwK2ynKs:TqGFv1qjK7o:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/TgJjwK2ynKs" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/whatfont-a-bookmarklet-for-identifying-fonts/">WhatFont &ndash; A Bookmarklet For Identifying Fonts</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Fri, 08 Jul 2011 09:06:41 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2346&c=4372' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2346&c=4372' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p>When browsing a website, we sometimes see a beautiful font, wonder what it is, check the source + CSS file (or Firebug) and get the answer. Sounds familiar?</p>
+<p><a href="http://chengyinliu.com/whatfont.html" target="_blank"><strong>WhatFont</strong></a> is a bookmarklet that eases this process so much. Once pressed, it <strong>displays the font used for any text hovered</strong>.</p>
+<p><a href="http://chengyinliu.com/whatfont.html" target="_blank"><img alt="WhatFont" height="342" src="http://www.webresourcesdepot.com/wp-content/uploads/whatfont.jpg" width="480" /></a></p>
+<p>If you click on the text, it <strong>drops a pin with the details of the font</strong> including style, weight, line-height and font-size. These pins are not removed after each click, so, multiple items can be easily compared.</p>
+<p>Also, <strong>WhatFont detects fonts served from services like Typekit or Google Font API</strong> and displays this info.</p>
+<p>Simply, a must-use for every web designer.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=ppOjBHobUj4:tkknvnBqtGA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=ppOjBHobUj4:tkknvnBqtGA:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=ppOjBHobUj4:tkknvnBqtGA:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=ppOjBHobUj4:tkknvnBqtGA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=ppOjBHobUj4:tkknvnBqtGA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=ppOjBHobUj4:tkknvnBqtGA:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=ppOjBHobUj4:tkknvnBqtGA:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/ppOjBHobUj4" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/gitalist-open-source-viewer-for-git-repos/">Gitalist &ndash; Open Source Viewer For Git Repos</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Thu, 07 Jul 2011 21:01:57 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2273&c=8114' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2273&c=8114' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p>Git is one of the most popular version control systems out there and, if you use it, you will find <a href="http://www.gitalist.com/" target="_blank"><strong>Gitalist</strong></a> very useful.</p>
+<p>It is an <strong>open source web application for viewing local and/or remote git repositories</strong> in an easy-to-browse interface.</p>
+<p><a href="http://www.gitalist.com/" target="_blank"><img alt="Gitalist" height="284" src="http://www.webresourcesdepot.com/wp-content/uploads/gitalist.gif" width="480" /></a></p>
+<p><strong>Gitalist can connect to multiple repositories and branches</strong>. The application can display the differences in commits and present the history color-coded.</p>
+<p>There are both <strong>short + long log views</strong> and it generates an Atom feed of the commits for the followers.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=aQ249uz4LBw:c6ajELPz3Ds:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=aQ249uz4LBw:c6ajELPz3Ds:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=aQ249uz4LBw:c6ajELPz3Ds:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=aQ249uz4LBw:c6ajELPz3Ds:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=aQ249uz4LBw:c6ajELPz3Ds:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=aQ249uz4LBw:c6ajELPz3Ds:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=aQ249uz4LBw:c6ajELPz3Ds:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/aQ249uz4LBw" height="1" width="1"/></div>
+</li>
+<li class="regularitem">
+<h4 class="itemtitle">
+<a href="http://www.webresourcesdepot.com/jscolor-a-flexible-javascript-color-picker/">JSColor &ndash; A Flexible JavaScript Color Picker</a>
+</h4>
+<h5 class="itemposttime">
+<span>Posted: </span>Thu, 07 Jul 2011 05:01:15 +0000</h5>
+<div class="itemcontent" name="decodeable"><p><a href='http://rss.buysellads.com/click.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2344&c=10880' target='_blank'><img src='http://rss.buysellads.com/img.php?z=1259982&k=ed230295611f656daf3115e6d682ca7d&a=2344&c=10880' border='0' alt='' /></a></p><p><a href='http://buysellads.com/buy/sitedetails/pubkey/ed230295611f656daf3115e6d682ca7d/zone/1259982' target='_blank'>Advertise here with BSA</a></p><br /><p><a href="http://jscolor.com/" target="_blank"><strong>JSColor</strong></a> is a simple and very easy-to-implement <strong>JavaScript library that transforms any given input into a color picker</strong>.</p>
+<p>The picker is a hidden layer, <strong>doesn&#39;t use any pop-ups</strong> and can be positioned on any side of the input field.</p>
+<p><a href="http://jscolor.com/" target="_blank"><img alt="JSColor" height="203" src="http://www.webresourcesdepot.com/wp-content/uploads/jscolor-color-picker.jpg" width="480" /></a></p>
+<p>It has 2 modes; HSV (hue saturation, value) or HVS, can be set to display a default color on initial load and <strong>its look can be customized</strong>.</p>
+<p>There are <strong>functions provided for showing/hiding the color picker</strong> and it can generate RGB or HSV values from a HEX input.</p>
+<p><strong>Special Downloads:</strong><br />
+<a href="http://www.webresourcesdepot.com/?download=jBasket" target="_blank">Ajaxed Add-To-Basket Scenarios With jQuery And PHP</a><br />
+<a href="http://www.webresourcesdepot.com/?download=Free-Admin-Template" target="_blank">Free Admin Template For Web Applications</a><br />
+<a href="http://www.webresourcesdepot.com/?download=jQuery-Dynamic-Drag-Drop" target="_blank">jQuery Dynamic Drag&#8217;n Drop</a><br />
+<a href="http://www.webresourcesdepot.com/?download=sTwitter-1-0" target="_blank">ScheduledTweets</a></p>
+<p><strong>Advertisements:</strong><br />
+<a href="http://www.admintemplates.com" target="_blank">Professional XHTML Admin Template ($15 Discount With The Code: WRD.)</a><br />
+<a href="http://www.xhtmchop.com" target="_blank">Psd to Xhtml</a><br />
+<a href="http://www.sslmatic.com" target="_blank">SSLmatic &#8211; Cheap SSL Certificates (from $19.99/year)</a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=XaoH4f8xcKY:Qb26RUKcVhg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=XaoH4f8xcKY:Qb26RUKcVhg:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=XaoH4f8xcKY:Qb26RUKcVhg:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=XaoH4f8xcKY:Qb26RUKcVhg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=XaoH4f8xcKY:Qb26RUKcVhg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/webresourcesdepot?a=XaoH4f8xcKY:Qb26RUKcVhg:gIN9vFwOqvQ"><img src="http://feeds.feedburner.com/~ff/webresourcesdepot?i=XaoH4f8xcKY:Qb26RUKcVhg:gIN9vFwOqvQ" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/webresourcesdepot/~4/XaoH4f8xcKY" height="1" width="1"/></div>
+</li>
+</ul>
+</div>
+<div id="footer">
+<a href="http://www.feedburner.com"><img src="http://www.feedburner.com/fb/feed-styles/images/footer_logo.gif"></a>
+<p>FeedBurner delivers the world's subscriptions wherever they need to go. Publish a feed for text or podcasting? <a href="http://www.feedburner.com" target="_blank">
+<br>You should try FeedBurner today</a>.</p>
+</div>
+</div>
+</body>
+</html>

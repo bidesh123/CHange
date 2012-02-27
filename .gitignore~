@@ -1,0 +1,12 @@
+.project
+.DS_Store
+log/*
+nbproject
+config/database.yml
+vendor/*
+/tmp
+Gemfile.lock
+.bundle/
+public/movies
+public/uploads
+

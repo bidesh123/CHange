@@ -1,0 +1,44 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %link{"rel" => "stylesheet", "href" => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css", "type" => "text/css"}
+    %title
+      = h(yield(:title) || "Devise")
+    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'lostbets'
+    = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery.js'
+    = javascript_include_tag 'jquery-ui.js'
+    = javascript_include_tiny_mce_if_used
+    = tiny_mce if using_tiny_mce?
+    = javascript_include_tag 'application'
+    %script{:type => "text/javascript", :charset => "utf-8", :src => "http://github.com/malsup/media/raw/master/jquery.media.js?v0.92"}
+    = javascript_include_tag "metadata.js"
+    = javascript_include_tag "numeric"
+    
+    %script{:type => "text/javascript", :charset => "utf-8"}
+      jQuery("#price").jStepper({minValue:0, maxValue:99999});
+    %script{:type => "text/javascript", :charset => "utf-8"}
+      $(function() {
+      var arr= new Array();
+      $j('.video_list').each(
+      function(){
+      arr.push($j(this).html().trim());
+      });
+      $j("#search").autocomplete({ source: arr});
+      });
+    :javascript
+      var $j = jQuery.noConflict();
+    :javascript
+      $j('.media').media();
+
+    = csrf_meta_tag
+  %body
+    %div#container
+      %div{ :id => 'fb-root'}
+      = render :partial => "shared/header"
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          = content_tag :div, msg, :id => "flash_#{name}"
+      = yield
+      = render :partial => "shared/footer"

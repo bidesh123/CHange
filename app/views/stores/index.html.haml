@@ -1,0 +1,29 @@
+%h1 Listing stores
+
+%table{:border => "0", :cellspacing => "1", :cellpadding => "2", :style => "border:solid 1px #603312; background:#603312;"}
+  %tr
+    %td{:align => "center",:valign => "middle", :class => "t_head"} User
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Description
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Title
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+
+  - @stores.each do |store|
+    %tr{:class => "color_bg"}
+      %td{:align => "left", :valign => "top"}= store.user_id
+      %td{:align => "left", :valign => "top"}= store.description.to_s.gsub(/<.*?\>|&nbsp;/,"")
+      %td{:align => "left", :valign => "top"}= store.title
+      %td{:align => "left", :valign => "top"}= link_to 'Show', "/store/store_desc" if user_signed_in?
+      %td{:align => "left", :valign => "top"}= link_to 'Edit', edit_store_path(store.id) if user_signed_in? && store.user_id == current_user.id && current_user.role?("producer")
+      %td{:align => "left", :valign => "top"}= link_to 'Destroy', store, :confirm => 'Are you sure?', :method => :delete if user_signed_in? && store.user_id == current_user.id && current_user.role?("producer")
+      - if current_user.role?("admin")
+        %td{:align => "left", :valign => "top"}= link_to 'Edit', edit_store_path(store.id) if user_signed_in?
+        %td{:align => "left", :valign => "top"}= link_to 'Destroy', store, :confirm => 'Are you sure?', :method => :delete if user_signed_in?
+
+%br
+- unless current_user.role?("admin")
+  = link_to 'New Store', new_store_path(:user_id => current_user.id) if user_signed_in?
+- else
+  = link_to 'New Store', new_store_path if user_signed_in?
+

@@ -1,0 +1,22 @@
+%h1 Listing pictures
+
+%table
+  %tr
+    %th
+    %th
+    %th
+  
+  - @pictures.each do |picture|
+    %tr
+      %td= image_tag picture.photo.icon40.url unless picture.nil?
+      %td= link_to 'Show', picture_path(:id => picture.id)
+      - if  current_user.role?("producer")
+        %td= link_to 'Edit', edit_picture_path(picture, :store_id => Asset.first(:assetable_id => picture.id, :assetable_type => "image").store.id) if Asset.first(:assetable_id => picture.id, :assetable_type => "image").store.user_id == current_user.id
+        %td= link_to 'Destroy', picture_path(picture), :method => "delete" if Asset.first(:assetable_id => picture.id, :assetable_type => "image").store.user_id == current_user.id
+      - if current_user.role?("admin")
+        %td= link_to 'Edit', edit_picture_path(picture)
+        %td= link_to 'Destroy', picture_path(picture), :method => "delete"
+
+%br
+
+= link_to 'New Picture', new_picture_path if current_user.role?("admin")

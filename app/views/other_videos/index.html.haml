@@ -1,0 +1,17 @@
+- unless @other_videos.empty? || @other_videos.other_video_images.empty?
+  %h1 Our other videos
+
+%table
+  - @other_videos.each do |other_video|
+    %tr
+      - other_video.other_video_images.all(:limit => 3).each do |image|
+        %td
+          %div{:style => "position:relative;"}
+            %a{:href => other_video_path(other_video.id), :onmouseout => "moff(#{image.id});", :onmouseover => "mon(#{image.id})"}
+              = image_tag image.image.to_s, :width => 260,:height => 260, :id => "img_#{image.id}"
+              = image_tag "/images/play.png", :id => "play_#{image.id}", :style => "display:none;left: 90px;position: absolute;top: 85px;z-index: 10;"
+
+
+%br
+- if current_user && current_user.roles.first.name == "admin"
+  = link_to 'New Other video', new_other_video_path

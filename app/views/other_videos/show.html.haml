@@ -1,0 +1,46 @@
+%p#notice= notice
+  
+%div
+  %div{:style => "float:left;"}
+    - @other_video.other_video_images.each do |vi|
+      %div{:style => "position:relative;"}
+        %a{:href => subscription_other_videos_path, :onmouseout => "moff(#{vi.id});", :onmouseover => "mon(#{vi.id})"}
+          = image_tag vi.image.to_s, :width => 260,:height => 260, :id => "img_#{vi.id}"
+          = image_tag "/images/play.png", :id => "play_#{vi.id}", :style => "display:none;left: 90px;position: absolute;top: 85px;z-index: 10;"
+      %br
+      %div{:class => "other_video"}
+
+  %div{:class => "other_video_main"}
+    - unless @other_video.demo_video_path.nil?
+      %object{:height => "360", :width => "520"}
+      %param{:name => "movie", :value => @other_video.demo_video_path}
+      %param{:name => "allowFullScreen", :value => "true"}
+      %param{:name => "allowscriptaccess", :value => "always"}
+      %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "360", :autoplay => false, :src => "/main_videos/demo/"+@other_video.demo_video_path,:type => "application/x-\nshockwave-flash", :width => "520"}
+ 
+  %div{:class => "other_video_link"}
+    %h2= @other_video.title
+    = @other_video.description.gsub(/<\/?[^>]*>/, "")
+
+
+    %br
+    %div{:style => "float:left;width:500px;"}
+      - if current_user
+        - unless current_user.role?("admin") || current_user.role?("producer")
+          = link_to "Download MP4 High defination", subscription_other_videos_path
+          = link_to "Download MPEG", subscription_other_videos_path
+          = link_to "Download WMV", subscription_other_videos_path
+      - else
+        = link_to "Download MP4 High defination", subscription_other_videos_path
+        = link_to "Download MPEG", subscription_other_videos_path
+        = link_to "Download WMV", subscription_other_videos_path
+
+
+%div{:class => "other_video_l"}
+  - if current_user &&  current_user.roles.first.name == "admin"
+    = link_to 'Edit', edit_other_video_path(@other_video)
+    \|
+    = link_to 'Back', other_videos_path
+
+
+    

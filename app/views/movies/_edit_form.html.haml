@@ -1,0 +1,26 @@
+= form_for :video, @movie, :url => {:action=>"update", :controller=>"movies", :id => @movie.id}, :html => {:multipart => true, :method => :put} do |f|
+  -if @movie.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@movie.errors.count, "error")} prohibited this movie from being saved:"
+      %ul
+        - @movie.errors.full_messages.each do |msg|
+          %li= msg
+  = hidden_field_tag :store_id, params[:store_id]
+  %div.field
+    = f.label "Upload Video:"
+    %br
+    = file_field_tag :file
+
+  %div.field
+    = label_tag "Estimated Price:"
+    %br
+    = text_field_tag :price
+
+  %div.field
+    - if current_user.role?("admin")
+      = f.label "Select Store:"
+      %br
+      = select_tag :store_id, options_for_select(Store.all.map {|s| [s.title,s.id]})
+
+  .actions
+    = f.submit 'Update'

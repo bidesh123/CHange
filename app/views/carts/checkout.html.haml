@@ -1,0 +1,30 @@
+%div
+  
+  %fieldset
+    %legend
+      Please Enter Your Details
+      = form_for :order, :url => { :action => :save_order } do |form|
+        
+        %p
+          %label
+          Name:-
+          = form.text_field :name, :size => 40
+          
+        %p
+          %label
+          Address:
+          = form.text_area :address, :rows => 3, :cols => 40 
+          %p
+            %label
+            E-Mail:
+            - if current_user.nil?
+              = form.text_field :email, :size => 40
+            - else
+              = form.text_field :email, :value => current_user.email, :size => 40
+          %p
+            %label
+            Pay with
+            =form.select :pay_type,Order::PAYMENT_TYPES, :prompt => "Select a payment method"
+        = submit_tag "Place Order"
+     
+  

@@ -1,0 +1,17 @@
+- index = Time.now.to_i
+%br
+%div{:class => "add_image_store_form"}
+ 
+  %h1 Upload Images
+  = fields_for  "image[#{index}]", Image.new do |i|
+    %div.field
+      = i.label "Upload Pictures:"
+      %br
+      = i.file_field :photo
+    = fields_for "image[#{index}]price", Asset.new do |a|
+      %div.field
+        = label_tag "Estimated Price:"
+        %br
+        = a.text_field :price, :id => "price"
+    %script{:type => "text/javascript", :charset => "utf-8"}
+      jQuery("#price").jStepper({minValue:0, maxValue:99999});

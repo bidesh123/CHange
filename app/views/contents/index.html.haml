@@ -1,0 +1,30 @@
+%h1 Listing contents
+
+%table
+  %tr
+    %tr
+    %th Store Name
+    %th Body
+    %th Title
+    %th
+    %th
+    %th
+    
+  - unless @contents.nil?
+    - @contents.each do |content|
+      %tr
+        %td= Asset.first(:assetable_type => "text", :assetable_id => content.id).store.title unless Asset.first(:assetable_type => "text", :assetable_id => content.id).store.nil?
+        %td= h content.body
+        %td= h content.title.gsub(/<.*?\>|&nbsp;/,"")
+        %td= link_to 'Show', content_path(content)
+        - if  current_user.role?("producer")
+          %td= link_to 'Edit', edit_content_path(content, :store_id => Asset.first(:assetable_id => content.id, :assetable_type => "text").store.id) if Asset.first(:assetable_id => content.id, :assetable_type => "text").store.user_id == current_user.id
+          %td= link_to 'Destroy', {:controller => 'contents', :action => 'destroy', :id => content.id}, :confirm => 'Are you sure?', :method => :delete if Asset.first(:assetable_id => content.id, :assetable_type => "text").store.user_id == current_user.id
+        - if current_user.role?("admin")
+          %td= link_to 'Edit', edit_content_path(content)
+          %td= link_to 'Destroy', content_path(content), :method => "delete"
+
+
+%br
+
+= link_to 'New Content', new_content_path if current_user.role?("admin")

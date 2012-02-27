@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%table{:border => "1"}
+  %tr
+    %th Store name
+    %th Body
+    %th Title
+  %tr
+    %td= Asset.first(:assetable_type => "text", :assetable_id => @content.id).store.title
+    %td= @content.body.gsub(/<.*?\>|&nbsp;/,"")
+    %td= @content.title
+- if current_user.role?("producer")
+  = link_to 'Edit', edit_content_path(@content, :store_id => Asset.first(:assetable_id => @content.id, :assetable_type => "text").store.id) if Asset.first(:assetable_id => @content.id, :assetable_type => "text").store.user_id == current_user.id
+- elsif current_user.role?("admin")
+  = link_to 'Edit', edit_content_path(@content)
+\|
+= link_to 'Back', contents_path

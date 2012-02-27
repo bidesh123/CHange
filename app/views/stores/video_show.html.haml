@@ -1,0 +1,7 @@
+= javascript_include_tag 'jquery', 'jquery-ui'
+%script{:type => "text/javascript", :charset => "utf-8", :src => "http://github.com/malsup/media/raw/master/jquery.media.js?v0.92"}
+= javascript_include_tag "metadata.js"
+:javascript
+  $(document).ready(function(){$('a.media').media();});
+%div{:class => "video"}
+  =link_to "File", "http://#{request.host_with_port}/movies/"+@video.source_file_name, :class => "media"

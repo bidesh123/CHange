@@ -1,0 +1,20 @@
+= form_for  :image, @picture=Image.new, :url => pictures_path, :html => {:multipart => true} do |f|
+  = hidden_field_tag :store_id,  params[:store_id] unless current_user.role?("admin")
+  %div.field
+    = f.label "Upload Pictures:"
+    %br
+    = f.file_field :photo
+  %div.field
+    = label_tag "Estimated Price:"
+    %br
+    = text_field_tag :price, :id => "price"
+  %div.field
+    - if current_user.role?("admin")
+      = f.label "Select Store:"
+      %br
+      = select_tag :store_id, options_for_select(Store.all.map {|s| [s.title,s.id]})
+  
+  .actions
+    = f.submit 'Save'
+%script{:type => "text/javascript", :charset => "utf-8"}
+  jQuery("#price").jStepper({minValue:0, maxValue:99999});

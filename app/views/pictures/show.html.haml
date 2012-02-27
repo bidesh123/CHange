@@ -1,0 +1,10 @@
+%p#notice= notice
+
+= image_tag @picture.photo.url
+
+- if current_user.role?("producer")
+  = link_to 'Edit', edit_picture_path(@picture, :store_id => Asset.first(:assetable_id => @picture.id, :assetable_type => "image").store.id) if Asset.first(:assetable_id => @picture.id, :assetable_type => "image").store.user_id == current_user.id
+- elsif current_user.role?("admin")
+  = link_to 'Edit', edit_picture_path(@picture)
+\|
+= link_to 'Back', pictures_path

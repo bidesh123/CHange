@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @store.user_id unless @store.user_id.nil?
+%p
+  %b Description:
+  = @store.description.gsub(/<.*?\>|&nbsp;/,"")
+%p
+  %b Title:
+  = @store.title
+
+= link_to 'Edit', edit_store_path(@store) if user_signed_in? && @store.user_id == current_user.id
+- if current_user.role?("admin")
+  = link_to 'Edit', edit_store_path(@store)
+\|
+= link_to 'Back', stores_path
+|
+= link_to 'Add Pictures on this Store', new_picture_path(:store_id => @store.id)
+|
+= link_to 'Add Video on this Store', new_movie_path(:store_id => @store.id)
+|
+= link_to 'Add some contents for post', new_content_path(:store_id => @store.id)
+

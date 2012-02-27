@@ -1,0 +1,45 @@
+%div
+  = link_to 'LostBets', root_path, :style => "font-size:28px;text-align:center;"
+  - unless user_signed_in?
+    %div#cart
+      
+    %div#user_login_box
+      = link_to "Login", new_user_session_path
+      |
+      = link_to "Sign Up", signups_path
+      |
+      = link_to "Store with Content", store_desc_stores_path
+      |
+      = link_to "Other Video Store", other_videos_path
+      - unless session[:cart].nil?
+        |
+        = link_to "Carts(#{session[:cart].total_items})", carts_path
+  - if user_signed_in?
+    %div#cart
+     
+    %div#user_login_box
+      = current_user.email
+      |
+      = link_to 'My info', edit_user_registration_path
+      |
+      = link_to 'Stores', stores_path if current_user.role?("admin") || current_user.role?("producer")
+      |
+      = link_to "Store List wise", store_desc_stores_path
+      - if current_user.role?("admin")
+        |
+        = link_to 'Set Roles', "/admin/set_roles"
+        |
+        = link_to 'Set Users', "/admin/set_users"
+        |
+        = link_to "Set Videos", other_videos_path
+        |
+        = link_to "Other Video Store", other_videos_path
+      - unless session[:cart].nil?
+        |
+        = link_to "Carts(#{session[:cart].total_items})", carts_path
+      |
+      = link_to 'Sign out', destroy_user_session_path
+      |
+      = link_to "Other Video Store", other_videos_path
+  .clear
+        

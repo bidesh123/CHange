@@ -1,0 +1,19 @@
+= form_for  :image, @picture, :url => {:controller => 'pictures', :action => 'update', :id => @picture.id}, :html => {:method => "put", :multipart => true} do |f|
+  = hidden_field_tag :store_id,  params[:store_id] unless current_user.role?("admin")
+  %div.field
+    = f.label "Upload Pictures:"
+    %br
+    = f.file_field :photo
+
+  %div.field
+    = label_tag "Estimated Price:"
+    %br
+    = text_field_tag :price
+
+  %div.field
+    - if current_user.role?("admin")
+      = f.label "Select Store:"
+      %br
+      = select_tag :store_id, options_for_select(Store.all.map {|s| [s.title,s.id]})
+  .actions
+    = f.submit 'Update'

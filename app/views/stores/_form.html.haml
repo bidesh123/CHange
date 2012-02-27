@@ -1,0 +1,39 @@
+= form_for @store, :html => {:multipart => true} do |f|
+  -if @store.errors.any?
+    #error_explanation
+    %h2= "#{pluralize(@store.errors.count, "error")} prohibited this store from being saved:"
+    %ul
+      - @store.errors.full_messages.each do |msg|
+        %li= msg
+  %div{:id => "store-place"}
+    - if current_user.role?("admin")
+      .field
+        = f.label :user_id
+        = f.select :user_id, User.all.map{|u|  [u.email,u.id]}.uniq
+    - else
+      = f.hidden_field :user_id, :value => current_user.id.to_s
+    .field
+      = f.label :description
+      = f.text_area :description, :class => :mceEditor
+    %br
+    .field
+      = f.label :title
+      = f.text_field :title
+    %br
+    %div{}
+      = render :partial => "video_add"
+    %div{}
+      = render :partial => "image_add"
+
+    %div{:class =>"field", :class => "add_video_link"}
+      %div{:id => "image-link"}= add_video_link
+      %br
+      %div{:id => "video-store"}
+    %br
+    %div{ :class => "field", :class => "add_image_link"}
+      %div{:id =>"video-link"}= add_images_link
+      %br
+      %div{:id => "image-store"}
+    %br
+    .field{:class => "store_submit_button"}
+      = f.submit 'Save'

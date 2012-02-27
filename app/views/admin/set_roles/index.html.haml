@@ -1,0 +1,23 @@
+%h1 Listing 
+
+%table{:border => "0", :cellspacing => "1", :cellpadding => "2", :style => "border:solid 1px #603312; background:#603312;"}
+  %tr
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Role
+    %td{:align => "center",:valign => "middle", :class => "t_head"} User
+    %td{:align => "center",:valign => "middle", :class => "t_head"} First Name
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Last Name
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+
+  - @set_roles.each do |set_role|
+    %tr{:class => "color_bg"}
+      %td{:align => "left", :valign => "top"}= set_role.role.name
+      %td{:align => "left", :valign => "top"}= set_role.user.email
+      %td{:align => "left", :valign => "top"}= set_role.user.first_name
+      %td{:align => "left", :valign => "top"}= set_role.user.last_name
+      %td{:align => "left", :valign => "top"}= link_to 'Edit', edit_admin_set_role_path(set_role)
+      %td{:align => "left", :valign => "top"}= link_to 'Destroy', {:controller => "admin/set_roles", :action => "destroy",:id => set_role.id}, :confirm => "Are you sure?", :method => "delete"
+
+%br
+
+

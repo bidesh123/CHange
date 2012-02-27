@@ -1,0 +1,27 @@
+%h1 Listing carts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - session[:cart].items.each do |cart_item|
+    %tr
+      %td
+        - unless cart_item.nil?
+          - if cart_item.type == "image"
+            = image_tag cart_item.image.photo.profile.url
+         
+          - else
+            %object{:height => "185", :width => "280"}
+            %param{:name => "movie", :value => cart_item.video.source_file_name}
+            %param{:name => "allowFullScreen", :value => "true"}
+            %param{:name => "allowscriptaccess", :value => "always"}
+            %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "185", :autoplay => false, :src => "/movies/"+cart_item.video.source_file_name,:type => "application/x-\nshockwave-flash", :width => "280"}
+
+
+  = button_to "Empty Cart", :controller => "carts", :action => "empty_cart"
+  = link_to "Checkout",  checkout_carts_path
+%br
+

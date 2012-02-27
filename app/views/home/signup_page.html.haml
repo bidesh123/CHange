@@ -1,0 +1,12 @@
+%div#signups
+  %ul
+    %li
+      %div#signups-type
+        = link_to "Producer", new_user_registration_path(:type => "producer")
+      
+    %li
+      %div#signups-type
+        = link_to "Consumer", new_user_registration_path(:type => "consumer")
+      
+    .clear
+   

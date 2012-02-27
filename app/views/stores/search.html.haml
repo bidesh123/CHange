@@ -1,0 +1,26 @@
+%div
+  = form_tag search_stores_path do
+    = text_field_tag "search"
+    = select_tag :category_id, options_for_select(["Select"] + Category.all.map {|c| [c.name,c.id]})
+    = submit_tag "Search"
+- unless @videos.empty?
+  -@videos.each do |video|
+    - unless Asset.first(:assetable_id => video.id,:assetable_type => "video").nil?
+      %div{:style=>"width:500px;"}
+        %h2= video.title
+        = video.description
+        %br
+        %div{:style=> "width:500px;"}
+          %strong= "$"+ Asset.first(:assetable_id => video.id,:assetable_type => "video").price.to_s unless Asset.first(:assetable_id => video.id,:assetable_type => "video").nil?
+          %br
+          %span{:style=>"width:160px;"}
+          = form_tag add_to_cart_carts_path(:asset_id => Asset.first(:assetable_id => video.id,:assetable_type => "video").id) do
+            = submit_tag "Add to Cart"
+          %span{:style=>"float:right;width:auto;"}
+          %strong= "Size:"+ Video.get(video.id).source_file_size.to_s
+          %br
+          %strong= "Format:"+ Video.get(video.id).source_content_type
+          - path = "/movies/"+Video.get(video.id).source_file_name
+          %div{:style=>"margin-left:568px;"}
+            = link_to image_tag( "/video_image/"+VideoImage.first(:video_id => video.id).source_file_name, :style=> "border:1px solid #ffffff;"),"http://#{request.host_with_port}/stores/video_show?id="+video.id.to_s, :onclick => "preview('#{video.id}');return false",:target => "_blank" unless  VideoImage.first(:video_id => video.id).nil?
+   

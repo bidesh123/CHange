@@ -1,0 +1,10 @@
+- index = Time.now.to_i
+%br
+%div{:style => "border:1px solid #000;padding:8px;"}
+  %h1 Upload Video Images
+  = fields_for  "image[#{index}]", OtherVideoImage.new do |i|
+    %div.field
+      = i.label "Upload Pictures:"
+      %br
+      = i.file_field :video_image
+ 

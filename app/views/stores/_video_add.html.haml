@@ -1,0 +1,42 @@
+- index = Time.now.to_i
+%br
+%div{:class => "add_video_store_form"}
+  %h1 Upload Video
+  %br
+  = fields_for  "video[#{index}]", Video.new do |v|
+    %div.field
+      = v.label "Upload Videos:"
+      %br
+      = v.file_field :file
+    = fields_for "video[#{index}]price", Asset.new do |a|
+      %div.field
+      = label_tag "Estimated Price:"
+      %br
+      = a.text_field :price, :id => "price",  :size => '20', :maxlength => '10'
+
+    = fields_for "video[#{index}]image", Image.new do |vi|
+      %div.field
+      = label_tag "The Video SnapShot Image:"
+      %br
+      = vi.file_field :photo
+
+
+    %div.field
+      = label_tag "Video Title:"
+      %br
+      = v.text_field :title
+
+    = fields_for "video[#{index}]category", CategoryVideo.new do |cv|
+      %div.field
+        = label_tag "Category:"
+        %br
+        = cv.select :category_id, Category.all.map {|c| [c.name,c.id]}
+
+
+    %div.field
+      = label_tag "Video Description:"
+      %br
+      = v.text_area :description, :rows => 10, :cols => 50, :class => :mceEditor
+      %br
+    %script{:type => "text/javascript", :charset => "utf-8"}
+      jQuery("#price").jStepper({minValue:0, maxValue:99999});

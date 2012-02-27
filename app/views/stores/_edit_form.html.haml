@@ -1,0 +1,48 @@
+= javascript_include_tag "preview.js"
+= form_for @store,:store, {:controller => "stores", :action => "update", :id => @store.id}, :html => {:method => :put, :multipart => true} do |f|
+  -if @store.errors.any?
+    #error_explanation
+    %h2= "#{pluralize(@store.errors.count, "error")} prohibited this store from being saved:"
+    %ul
+      - @store.errors.full_messages.each do |msg|
+        %li= msg
+  %div{:id => "store-place"}
+    - if current_user.role?("admin")
+      .field
+        = f.label :user_id
+        = f.select :user_id, User.all.map{|u|  [u.email,u.id]}.uniq
+    - else
+      = f.hidden_field :user_id, :value => current_user.id.to_s
+    .field
+      = f.label :description
+      = f.text_area :description, :class => :mceEditor
+    %br
+    .field
+      = f.label :title
+      = f.text_field :title
+    %br
+    %h1 Store Images
+    - @images = Asset.all(:store_id => @store.id, :assetable_type => "image")
+    - @images.each do |image|
+      = image_tag Image.get(image.assetable_id).photo.icon40.url unless Image.get(image.assetable_id).nil?
+      = link_to "Destroy", {:controller => "pictures", :action => "destroy", :id => Image.get(image.assetable_id).id, :value => "edit", :store_id => @store.id}, :method => :delete, :confirm => "Are You sure?" unless Image.get(image.assetable_id).nil?
+
+    %br
+    %h1 Store Videos
+    - @videos = Asset.all(:store_id => @store.id, :assetable_type => "video")
+    - @videos.each do |video|
+      = link_to image_tag( "/video_image/"+VideoImage.first(:video_id => Video.get(video.assetable_id).id).source_file_name, :style=> "border:1px solid #ffffff;"),"http://#{request.host_with_port}/stores/video_show?id="+video.assetable_id.to_s, :onclick => "preview('#{video.assetable_id}');return false",:target => "_blank"   unless Video.get(video.assetable_id).nil? || video.assetable_id.nil? || VideoImage.first(:video_id => Video.get(video.assetable_id).id).nil?
+      = link_to "Delete", {:controller => "movies", :action => "destroy", :id => Video.get(video.assetable_id).id, :value => "edit_form", :store_id => @store.id}, :method => :delete, :confirm => "Are you sure?" unless Video.get(video.assetable_id).nil? || video.assetable_id.nil?
+    %br
+    %div{:class =>"field", :class => "add_video_link"}
+      %div{:id => "image-link"}= add_video_link
+      %br
+      %div{:id => "video-store"}
+    %br
+    %div{ :class => "field", :class => "add_image_link"}
+      %div{:id =>"video-link"}= add_images_link
+      %br
+      %div{:id => "image-store"}
+    %br   
+    .field{:class => "store_submit_button"}
+      = f.submit 'Save'

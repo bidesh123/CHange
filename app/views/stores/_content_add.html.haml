@@ -1,0 +1,13 @@
+- index = Time.now.to_i
+%div{:style => "border:1px solid #000;"}
+  = fields_for "text[#{index}]",Text.new do |c|
+    %div.field
+      = c.label :body
+      = c.text_area :body, :class => :mceEditor
+    %div.field
+      = c.label :title
+      = c.text_field :title
+    %div.field
+      = label_tag "Estimated Price:"
+      %br
+      = text_field_tag :price

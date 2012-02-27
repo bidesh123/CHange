@@ -1,0 +1,30 @@
+%div
+  %h1 Confirmation Page
+  %div
+    - @order.line_items.each do |cart_item|
+      %p{:style => "border:1px solid #cccccc;"}
+        - if cart_item.asset.assetable_type == "image"
+          = image_tag Image.get(cart_item.asset.assetable_id).photo.profile.url
+          %h2
+            Total Items:-
+            = cart_item.quantity
+          %h2
+            Total Price:-
+            = cart_item.total_price
+      
+        - else
+          %object{:height => "185", :width => "280"}
+          %param{:name => "movie", :value => Video.get(cart_item.asset.assetable_id).source_file_name}
+          %param{:name => "allowFullScreen", :value => "true"}
+          %param{:name => "allowscriptaccess", :value => "always"}
+          %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "185", :autoplay => false, :src => "/movies/"+Video.get(cart_item.asset.assetable_id).source_file_name,:type => "application/x-\nshockwave-flash", :width => "280"}
+         
+          %h2
+            Total Items:-
+            = cart_item.quantity
+          %h2
+            Total Price:-
+            = cart_item.total_price
+  
+
+  =link_to "Pay through Paypal", @order.paypal_url(order_confirm_stores_url(:value => "paypal", :id => @order.id), @price, @order.name), :target => "_blank"

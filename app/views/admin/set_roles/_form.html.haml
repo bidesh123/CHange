@@ -1,0 +1,17 @@
+= form_for :set_role, @set_role, :url => {:action => 'update', :id => @set_role.id}, :html => {:method => "put"} do |f|
+  -if @set_role.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@set_role.errors.count, "error")} prohibited this set_role from being saved:"
+      %ul
+        - @set_role.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = label_tag :user_id, "User Name:"
+    = select_tag :user_id, options_for_select(get_users, current_user.email)
+  .field
+    = label_tag "Role"
+    = select_tag :role_id, options_for_select(Role.all.map {|r| [r.name,r.id]}, current_user.roles.first.name)
+
+  .actions
+    = f.submit 'Save'

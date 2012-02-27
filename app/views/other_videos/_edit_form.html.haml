@@ -1,0 +1,90 @@
+%div{}
+  %div
+    
+    - unless @other_video.main_video_mp4.nil?
+      %h2 The MP4 video
+      %object{:height => "160", :width => "260"}
+      %param{:name => "movie", :value => @other_video.main_video_mp4}
+      %param{:name => "allowFullScreen", :value => "true"}
+      %param{:name => "allowscriptaccess", :value => "always"}
+      %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "160", :autoplay => false, :src => "/main_videos/mp4/#{@other_video.id}/"+@other_video.main_video_mp4,:type => "application/x-\nshockwave-flash", :width => "260"}
+      = form_tag  update_video_other_videos_path(:id => @other_video.id, :value => "mp4"), :method => :put do
+        = submit_tag "Delete This MP4 Video"
+    %br
+    
+    - unless @other_video.demo_video_path.nil?
+      %h2 The Demo Video
+      %object{:height => "160", :width => "260"}
+      %param{:name => "movie", :value => @other_video.demo_video_path}
+      %param{:name => "allowFullScreen", :value => "true"}
+      %param{:name => "allowscriptaccess", :value => "always"}
+      %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "160", :autoplay => false, :src => "/main_videos/demo/#{@other_video.id}/"+@other_video.demo_video_path,:type => "application/x-\nshockwave-flash", :width => "260"}
+      = form_tag  update_video_other_videos_path(:id => @other_video.id, :value => "demo"), :method => :put do
+        = submit_tag "Delete This Demo Video"
+    %br
+    
+    - unless @other_video.main_video_wmv.nil?
+      %h2 The WMV video
+      %object{:height => "360", :width => "660"}
+      %param{:name => "movie", :value => @other_video.main_video_wmv}
+      %param{:name => "allowFullScreen", :value => "true"}
+      %param{:name => "allowscriptaccess", :value => "always"}
+      %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "160", :autoplay => false, :src => "/main_videos/wmv/#{@other_video.id}/"+@other_video.main_video_wmv,:type => "application/x-\nshockwave-flash", :width => "260"}
+      = form_tag  update_video_other_videos_path(:id => @other_video.id, :value => "wmv"), :method => :put do
+        = submit_tag "Delete This WMV Video"
+
+    %br
+    
+    - unless @other_video.main_video_mpeg.nil?
+      %h2 The MPEG video
+      %object{:height => "360", :width => "660"}
+      %param{:name => "movie", :value => @other_video.main_video_mpeg}
+      %param{:name => "allowFullScreen", :value => "true"}
+      %param{:name => "allowscriptaccess", :value => "always"}
+      %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "160", :autoplay => false, :src => "/main_videos/mpeg/#{@other_video.id}/"+@other_video.main_video_mpeg,:type => "application/x-\nshockwave-flash", :width => "260"}
+      = form_tag  update_video_other_videos_path(:id => @other_video.id, :value => "mpeg"), :method => :put do
+        = submit_tag "Delete This MPEG Video"
+    %br
+
+    %h2 The Video Images
+    - @other_video.other_video_images.each do |img|
+      = image_tag img.image.to_s, :width => 100, :height => 100
+      = link_to "Delete This Image", update_image_other_videos_path(:id => img.id, :other_video_id => @other_video.id), :method => :delete, :confirm => "Are you sure?"
+      %br
+= form_for :other_video, :url => {:action=>"update", :controller=>"other_videos", :id => @other_video.id}, :html => {:method => :put, :multipart => true} do |f|
+  %p
+  - if @other_video.demo_video_path.nil?
+    = label_tag "The Demo or Free Video"
+    %br
+    = file_field_tag :demo_video
+  - if @other_video.main_video_mp4.nil?
+    %p
+    = label_tag "The main Video(MP4)"
+    %br
+    = file_field_tag :main_video_mp4
+  - if @other_video.main_video_mpeg.nil?
+    %p
+    = label_tag "The Main Video(MPEG)"
+    %br
+    = file_field_tag :main_video_mpeg
+  - if @other_video.main_video_wmv.nil?
+    %p
+    = label_tag "The Main Video(WMV)"
+    %br
+    = file_field_tag :main_video_wmv
+  
+  %p
+  = label_tag "Title"
+  %br
+  = f.text_field :title
+  %p
+  = label_tag "Description"
+  %br
+  = f.text_area :description, :rows => 15, :col => 20, :class => :mceEditor
+  %br
+  %div{}
+    %div{:id =>"video-link"}= add_video_images_link
+    %br
+    %div{:id => "image-store"}
+  %div{:style => "float:left;width:auto;"}
+  = f.submit 'Save'

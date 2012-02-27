@@ -1,0 +1,22 @@
+%h1 Listing set_users
+
+%table{:border => "0", :cellspacing => "1", :cellpadding => "2", :style => "border:solid 1px #603312; background:#603312;"}
+  %tr{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"} First Name
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Last Name
+    %td{:align => "center",:valign => "middle", :class => "t_head"} Email
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+    %td{:align => "center",:valign => "middle", :class => "t_head"}
+
+  - @set_users.each do |set_user|
+    %tr{:class => "color_bg"}
+      %td{:align => "left", :valign => "top"}= set_user.first_name
+      %td{:align => "left", :valign => "top"}= set_user.last_name
+      %td{:align => "left", :valign => "top"}= set_user.email
+      %td{:align => "left", :valign => "top"}= link_to 'Show',  admin_set_user_path(set_user)
+      %td{:align => "left", :valign => "top"}= link_to 'Edit', edit_admin_set_user_path(set_user)
+      %td{:align => "left", :valign => "top"}= link_to 'Destroy', {:controller => "admin/set_users", :action => "destroy", :id => set_user.id}, :confirm => 'Are you sure?', :method => :delete
+
+%br
+

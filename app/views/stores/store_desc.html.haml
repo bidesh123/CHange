@@ -1,0 +1,173 @@
+= javascript_include_tag "preview.js"
+= javascript_include_tag "custom.js"
+= stylesheet_link_tag "cart.css"
+%div
+  %h1 Welcome to LostBets Production
+  %p Here, you"ll find video of girls playing and losing stripping games, along with the occasional guy. The loser (or losers) of each game has to perform a forfeit, ranging from the tame (do a naked twirl for the camera) to the sexy (rub baby oil on your breasts) to the embarrassing (open the door naked for the pizza guy) to the downright pornographic (use your imagination). If you like to see cute girls betting and losing their clothes, this is the place for you!
+  %p Updated every week on Fridays!
+  %p Click to View The Promo
+  %div
+    %object{:align => "middle",:width => "720",:height => "440" }
+    %param{:value=> "sameDomain",:name=>"allowScriptAccess"}
+    %param{:value=> "false", :name=> "allowFullScreen"}
+    %param{:value=> "LostBets - Clip Store Promo.swf", :name=> "movie"}
+    %param{:value=>"high",:name=> "quality"}
+    %embed{:align => "middle", :width =>"720", :height =>"440", :allowfullscreen=> "false", :allowscriptaccess=> "sameDomain", :src=> "http://www.lostbets.com/flash/LostBets%20-%20Clip%20Store%20Promo.swf"}
+  %br
+  %p{:style => "text-align:center;color:red;font-weight:bold;"} PLEASE NOTE: If the promo above is not working, you may view it by clicking
+  %br
+  %p All of our newer videos are available in both standard definition and beautiful 720p high definition. Please visit our web log and let us know what you think! We love to hear feedback and suggestions from our fans, and we often use the ideas we get.
+  %div{:style => "border:1px solid #000;padding:7px;"}
+    IMPORTANT! READ BEFORE PURCHASING! Our videos are encoded using the H.264 standard. This provides the highest quality video possible, but your computer may not be able to play them without installing additional software. In addition, if you have an older or low-powered computer, it may not be able to play our high definition videos. Please try downloading our promo and sample clips to make sure you can play them. If you can"t, and you"re running a version Microsoft Windows prior to Windows 7, we recommend that you try installing the ffdshow codec pack (Google it), which will probably fix the problem. Please note that certain versions of Apple"s Quicktime Player for Windows have a bug where they say "Error -37" when trying to play videos with filenames longer than 63 characters. If you"re getting this error, try renaming the file to something shorter. 
+  %br
+%h1 Featured Clips
+%table{:cellspacing=>"3",:cellpadding => "0", :border => "0", :align=> "center", :style=> "border: 1px solid #000;float:left;"}
+  %tbody
+    %tr
+      - Video.all(:limit => 6).sort_by{rand}.each do |video|
+        %td{:align => "center",:valign => "top"}
+          = image_tag( "/video_image/"+VideoImage.first(:video_id => video.id).source_file_name, :width => 75, :height => 75, :style => "float:left;") unless VideoImage.first(:video_id => video.id).nil?
+          %div{:style => "width:75px;"}= video.title
+%br
+
+- unless @store.nil?
+  - Video.all.each do |video|
+    %div{:style => "display:none;", :class => "video_list"}
+      = video.title
+  %br
+  %div{:class => "main_store_desc", :style => ""}
+   
+    = select_tag :video_name, options_for_select([["All clips", "http://#{request.host_with_port}/stores/store_desc"]] + all_videos), :onchange => "document.location = this.value", :style => "float:left;width:auto;"
+    = form_tag search_stores_path,:name => "select", :style => "width:497px;float:left;" do
+      = text_field_tag :search
+      = select_tag :category_id, options_for_select(["Select"] + Category.all.map {|c| [c.name,c.id]})
+      = submit_tag "Search"
+  %div{:style => "float:left;width:100%;"}
+    %p{:class => "txt1"}
+      Select Store:-
+      = select_tag :category_id, options_for_select(["Select"] + Store.all_store_selection(request.host_with_port)), :onchange => "document.location = this.value;"
+  %div{:style => "float:left;width:100%;"}
+    %div{:style => ""}
+      %div
+        %h2 Sort options
+        %table{:border => "1", :cellspacing => "2", :cellpadding => "11"}
+          %tr
+            %td= link_to "Price", store_desc_stores_path(:value => "price", :store_id => params[:store_id], :page => "1")
+            %td= link_to "Duration", "#"
+            %td= link_to "Title", store_desc_stores_path(:value => "title", :store_id => params[:store_id], :page => "1")
+            %td= link_to "Length", store_desc_stores_path(:value => "size", :store_id => params[:store_id], :page => "1")
+            %td= link_to "Category", store_desc_stores_path(:value => "category", :store_id => params[:store_id], :page => "1")
+            %td= link_to "Date", store_desc_stores_path(:value => "date", :store_id => params[:store_id], :page => "1")
+
+      %h1= @store.title unless @store.nil?
+      %p= @store.description.gsub(/<.*?\>|&nbsp;/,"") unless @store.description.nil?
+      - if params[:value].nil?
+        - @asset_images = Asset.all(:assetable_type => "image", :store_id => @store.id, :limit => 4)
+      - elsif params[:value] == "price"
+        - @asset_images = Asset.all(:assetable_type => "image", :store_id => @store.id, :limit => 4, :order => "price")
+      - elsif params[:value] == "category"
+        - @asset_images = []
+      - else
+        - @asset_images = Asset.all(:assetable_type => "image", :store_id => @store.id, :limit => 4)
+
+      - if !@asset_images.nil? || !@asset_images.empty?
+        %p
+          %h2 Images :-
+          %ul
+            -@asset_images.each do |asset|
+              %li
+                %p
+                - unless RAILS_ENV == "test"
+                  = image_tag Image.get(asset.assetable_id).photo.icon40.url, :class => "photo_icon" unless Image.get(asset.assetable_id).nil? && Image.get(asset.assetable_id).photo.nil?
+                - else
+                  = image_tag "/images/pic.jpg", :class => "photo_icon" unless Image.get(asset.assetable_id).nil? && Image.get(asset.assetable_id).photo.nil?
+                = form_tag add_to_cart_carts_path(:asset_id => asset.id) do
+                  = submit_tag "Add to Cart"
+            =link_to "View More", pictures_path
+      - if params[:value].nil?
+        - @asset_videos = Asset.all.paginate(:page => params[:page], :assetable_type => "video", :store_id => @store.id)
+      - elsif params[:value] == "price"
+        - @asset_videos = Asset.all.paginate(:page => params[:page],:assetable_type => "video", :store_id => @store.id, :order => "price")
+      - elsif params[:value] == "category"
+        - @asset_videos = set_value(params[:page])
+
+      - elsif params[:value] == "title"
+        - @asset_videos = set_video_value(@store,params[:page])
+      - elsif params[:value] == "date"
+        - @asset_videos = set_video_date_wise(@store, params[:page])
+      - elsif params[:value] == "size"
+        - @asset_videos = set_video_length_wise(@store,params[:page])
+
+      - if !@asset_videos.empty? && params[:value] != "category" && params[:value] != "title" && params[:value] != "date" && params[:value] != "size"
+        %p
+        %h2 Videos:-
+        = label_tag "", "Showing Page", :style => "margin-left:15px;"
+        = select_tag :page,  options_for_select(page_select(request.host_with_port,@asset_videos.total_entries), params[:page]), :onchange => "document.location = this.value;"
+        = will_paginate @asset_videos 
+        %div{:class=>"video-main"}
+          -@asset_videos.each do |asset|
+            %div{:style=>"float:left;width:450px;"}
+              %h2= Video.get(asset.assetable_id).title
+              %p=  Video.get(asset.assetable_id).description
+              %br
+            %div{:class => "video_cart"}
+              %strong= "$"+ asset.price.to_s
+              %br
+              = form_tag add_to_cart_carts_path(:asset_id => asset.id), :style => "width:auto;float:left;" do
+                = submit_tag "Add to Cart"
+              %div{:class => "video_info"}
+                %strong= "Size:"+ Video.get(asset.assetable_id).source_file_size.to_s
+                %br
+                %strong= "Format:"+ Video.get(asset.assetable_id).source_content_type
+                %br
+                %strong= "Category:"+ Video.get(asset.assetable_id).categories.first.name
+                %br
+                %strong= "Added:"+ Video.get(asset.assetable_id).source_updated_at.strftime("%d/%m/%y %k:%M:%S %p")
+                %br
+              - path = "/movies/"+Video.get(asset.assetable_id).source_file_name
+            %div{:style=>"float:none;width:auto;", :class => "video_image"}
+              =link_to image_tag( "/video_image/"+VideoImage.first(:video_id => Video.get(asset.assetable_id).id).source_file_name, :style=> "border:1px solid #ffffff;"),"http://#{request.host_with_port}/stores/video_show?id="+asset.assetable_id.to_s, :onclick => "preview('#{asset.assetable_id}');return false",:target => "_blank" unless  VideoImage.first(:video_id => Video.get(asset.assetable_id).id).nil?
+  
+            %br
+        = will_paginate @asset_videos
+      - else
+        %p
+        %h2 Videos:-
+        -#= label_tag "", "Showing Page", :style => "margin-left:15px;"
+        -#= select_tag :page,  options_for_select(page_select(request.host_with_port,@asset_videos.total_entries), params[:page]), :onchange => "document.location = this.value;" unless Rails.env == "test"
+        = will_paginate @asset_videos
+
+        %div{:style=>"float:left;border:1px solid #000;padding:5px;"}
+          -@asset_videos.each do |video|
+            %div{:style=>"float:left;width:450px;"}
+              %h2= video.title
+              %p=  video.description
+              %br
+            %div{:style=> "float:left;width:450px;"}
+              %strong= "$"+ Asset.first(:assetable_id => video.id, :assetable_type => "video").price.to_s unless Asset.first(:assetable_id => video.id, :assetable_type => "video").nil?
+              %br
+              %span{:style=>"float:left;width:160px;"}
+                - unless Asset.first(:assetable_id => video.id, :assetable_type => "video").nil?
+                  = form_tag add_to_cart_carts_path(:asset_id => Asset.first(:assetable_id => video.id, :assetable_type => "video").id) do
+                    = submit_tag "Add to Cart"
+              %span{:style=>"float:right;width:auto;"}
+                %strong= "Size:"+ video.source_file_size.to_s
+                %br
+                %strong= "Format:"+ video.source_content_type
+                %br
+                %strong= "Category:"+ video.categories.first.name
+                %br
+                %strong= "Added:"+ video.source_updated_at.strftime("%d/%m/%y %k:%M:%S %p")
+                %br
+              - path = "/movies/"+video.source_file_name
+            %div{:style=>"margin-left:568px;"}
+              =link_to image_tag( "/video_image/"+VideoImage.first(:video_id => video.id).source_file_name, :style=> "border:1px solid #ffffff;"),"http://#{request.host_with_port}/stores/video_show?id="+video.id.to_s, :onclick => "preview('#{video.id}');return false",:target => "_blank" unless  VideoImage.first(:video_id => video.id).nil?
+      
+            %br
+        = will_paginate @asset_videos unless Rails.env == "test"
+        = label_tag "Showing Page"
+        = select_tag :page,  options_for_select(page_select(request.host_with_port,@asset_videos.total_entries), params[:page]), :onchange => "document.location = this.value;" unless Rails.env == "test"
+
+        =link_to "View More", movies_path
+     
+  

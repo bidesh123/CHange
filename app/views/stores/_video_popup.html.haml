@@ -1,0 +1,5 @@
+%object{:height => "100", :width => "100"}
+  %param{:name => "movie", :value => "/movies/"+Video.get(asset.assetable_id).source_file_name}
+  %param{:name => "allowFullScreen", :value => "true"}
+  %param{:name => "allowscriptaccess", :value => "always"}
+  %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:autoplay => false, :height => "185", :src =>"/movies/"+ Video.get(asset.assetable_id).source_file_name,:type => "application/x-\nshockwave-flash", :width => "180", :style => "margin-left:12px;"}

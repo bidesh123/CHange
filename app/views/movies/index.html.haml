@@ -1,0 +1,27 @@
+%h1 Listing movies
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @movies.each do |movie|
+    %tr
+      %td
+        %object{:height => "185", :width => "280"}
+        %param{:name => "movie", :value => movie.source_file_name}
+        %param{:name => "allowFullScreen", :value => "true"}
+        %param{:name => "allowscriptaccess", :value => "always"}
+        %embed{:allowfullscreen => "true", :allowscriptaccess => "always",:height => "185", :src =>"/movies/"+ movie.source_file_name,:type => "application/x-\nshockwave-flash", :width => "280"}
+      %td= link_to 'Show', movie_path(movie)
+      %td= link_to 'Edit', edit_movie_path(movie, :store_id => Asset.first(:assetable_id => movie.id, :assetable_type => "video").store.id) if Asset.first(:assetable_id => movie.id, :assetable_type => "video").store.user_id == current_user.id
+      %td= link_to 'Destroy', {:controller => "movies", :action => "destroy",:id => movie.id}, :confirm => 'Are you sure?', :method => :delete if Asset.first(:assetable_id => movie.id, :assetable_type => "video").store.user_id == current_user.id 
+      - if current_user.role?("admin")
+        %td= link_to 'Edit', edit_movie_path(movie)
+        %td= link_to 'Destroy', movie_path(movie), :method => "delete"
+
+
+%br
+
+= link_to 'New Movie', new_movie_path if current_user.role?("admin")
